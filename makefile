@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -Wall -MMD
-OBJECTS = temp.o Game.o headers.o
+OBJECTS = temp.o game.o headers.o
 DEPENDS = ${OBJECTS:.o=.d}
-EXEC = poke
+EXEC = temp
 LIBS=-lsfml-graphics -lsfml-window -lsfml-system
 
 ${EXEC}: ${OBJECTS}

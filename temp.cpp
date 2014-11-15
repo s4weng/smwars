@@ -1,9 +1,9 @@
 #include "headers.h"
-#include "Game.h"
+#include "game.h"
 
 int main()
 {
-	Game::Start();
+	Game::start();
 
 	return 0;
 }

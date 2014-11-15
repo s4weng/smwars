@@ -16,6 +16,7 @@ void Game::gameLoop()
 {
     sf::Event currentEvent;
 
+    mainWindow.pollEvent(currentEvent);
     if (currentEvent.type == sf::Event::Closed)
         mainWindow.close();
 
