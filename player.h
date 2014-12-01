@@ -1,20 +1,12 @@
 #ifndef _PLAYER_H__
 #define _PLAYER_H__
-#include "GameObject.h"
+#include "character.h"
 
-class Player: public GameObject
+class Player: public Character
 {
 public:
     Player();
     ~Player();
-
-    void Update(float);
-    void Draw(sf::RenderWindow &);
-
-    float getVelocity() const;
-
-private:
-    float velocity, maxVelocity;
 };
 
 #endif

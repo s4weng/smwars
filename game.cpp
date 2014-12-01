@@ -1,6 +1,7 @@
 #include "headers.h"
 #include "game.h"
 #include "player.h"
+#include "AIChar.h"
 using namespace std;
 
 sf::RenderWindow Game::mainWindow;
@@ -11,10 +12,13 @@ void Game::start()
 {
     mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Temp!");
     
-    //main player
+    //player and AI creation
     Player *p = new Player();
+    AIChar *a = new AIChar();
     p->setPosition(playerPosX, playerPosY);
+    a->setPosition(AICharPosX, AICharPosY);
     GOM.Add("player", p);
+    GOM.Add("AI", a);
 
     //main game loop
     while (mainWindow.isOpen())
@@ -32,7 +36,7 @@ void Game::start()
     mainWindow.draw(currentBG);
 }*/
 
-//draws objects (player characters, ...)
+//draws objects (Character characters, ...)
 void Game::drawGameObjects()
 {
     GOM.updateAll();

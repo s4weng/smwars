@@ -8,13 +8,11 @@ public:
     virtual ~GameObject();
 
     virtual void Load(std::string);
-    //virtual void Load(std::string, std::string);
     virtual void Draw(sf::RenderWindow &);
-    //virtual void switchPrimarySprite();
     virtual void Update(float);
 
     virtual void setPosition(float x, float y);
-    virtual bool isLoaded() const; //primary image
+    virtual bool isLoaded() const;
     virtual float getWidth() const;
     virtual float getHeight() const;
     virtual sf::Vector2f getPosition() const;

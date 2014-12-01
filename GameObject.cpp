@@ -24,33 +24,6 @@ void GameObject::Load(std::string name)
   }
 }
 
-/*void GameObject::Load(std::string n1, std::string n2)
-{
-    if (PTexture.loadFromFile(n1) == false)
-    {
-        PFilename = "";
-        PLoaded = false;
-    }
-    else
-    {
-        PFilename = n1;
-        PSprite.setTexture(PTexture);
-        PLoaded = true;
-    }
-
-    if (STexture.loadFromFile(n2) == false)
-    {
-        SFilename = "";
-        SLoaded = false;
-    }
-    else
-    {
-        SFilename = n2;
-        SSprite.setTexture(STexture);
-        SLoaded = true;
-    }
-}*/
-
 void GameObject::Draw(sf::RenderWindow &w)
 {
     if (loaded)
@@ -62,17 +35,6 @@ void GameObject::Draw(sf::RenderWindow &w)
 void GameObject::Update(float elapsedTime)
 {
 }
-
-
-/*void GameObject::switchPrimarySprite()
-{
-    int height = getHeight();
-    int width = getWidth();
-    TSprite = PSprite;
-    PSprite = SSprite;
-    SSprite = TSprite;
-    PSprite.setOrigin(width, height);
-}*/
 
 void GameObject::setPosition(float x, float y)
 {

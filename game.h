@@ -12,6 +12,8 @@ public:
     const static int SCREEN_HEIGHT = 768;
     const static int playerPosX = 300;
     const static int playerPosY = 600;
+    const static int AICharPosX = 500;
+    const static int AICharPosY = 600;
 private:
 	static void gameLoop();
     //static void setBackground();
