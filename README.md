@@ -8,10 +8,10 @@ Players will be able to move around the map before selecting their weapon of cho
 
 Basic to-do list:
 - turn-based system
-- basic movement limit
 - basic attack functionality
   - human
   - AI
+- multiple human player support
 
 Required Graphical Tasks:
 - Sprites with transparent background
