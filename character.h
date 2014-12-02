@@ -12,7 +12,7 @@ public:
     float getVelocity() const;
 
 protected:
-    int steps;
+    int steps, hitpoints;
 };
 
 #endif

@@ -2,7 +2,7 @@
 #include "character.h"
 #include "game.h"
 
-Character::Character(): steps(100)
+Character::Character(): steps(100), hitpoints(100)
 {
     Character::Load("Images/testSprite.jpeg");
     getSprite().setOrigin(getSprite().getLocalBounds().width, getSprite().getLocalBounds().height);
