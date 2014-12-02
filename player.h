@@ -7,6 +7,8 @@ class Player: public Character
 public:
     Player();
     ~Player();
+
+    void Update(float);
 };
 
 #endif

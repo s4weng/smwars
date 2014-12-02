@@ -23,6 +23,8 @@ float Character::getVelocity() const
     return velocity;
 }
 
+
+/*
 void Character::Update(float elapsedTime)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
@@ -58,3 +60,4 @@ void Character::Update(float elapsedTime)
 
     getSprite().move(velocity * elapsedTime, 0);
 }
+*/

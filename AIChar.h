@@ -7,6 +7,9 @@ class AIChar: public Character
 public:
     AIChar();
     ~AIChar();
+
+    void Update(float);
+
 };
 
 #endif

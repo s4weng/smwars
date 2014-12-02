@@ -5,3 +5,5 @@
 AIChar::AIChar(){}
 
 AIChar::~AIChar(){}
+
+void AIChar::Update(float elapsedTime){}
