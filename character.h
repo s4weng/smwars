@@ -8,9 +8,7 @@ public:
     Character();
     ~Character();
 
-    //void Update(float);
     void Draw(sf::RenderWindow &);
-
     float getVelocity() const;
 
 protected:

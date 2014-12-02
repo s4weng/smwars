@@ -1,6 +1,7 @@
 #include "headers.h"
 #include "GameObjectManager.h"
 #include "game.h"
+using namespace std;
 
 GameObjectManager::GameObjectManager()
 {	
@@ -8,17 +9,17 @@ GameObjectManager::GameObjectManager()
 
 GameObjectManager::~GameObjectManager()
 {
-	std::for_each(gameObjects.begin(),gameObjects.end(),GameObjectDeallocator());
+	for_each(gameObjects.begin(),gameObjects.end(),GameObjectDeallocator());
 }
 
-void GameObjectManager::Add(std::string name, GameObject* gameObject)
+void GameObjectManager::Add(string name, GameObject* gameObject)
 {
-	gameObjects.insert(std::pair<std::string, GameObject*>(name, gameObject));
+	gameObjects.insert(pair<string, GameObject*>(name, gameObject));
 }
 
-void GameObjectManager::Remove(std::string name)
+void GameObjectManager::Remove(string name)
 {
-	std::map<std::string, GameObject*>::iterator results = gameObjects.find(name);
+	map<string, GameObject*>::iterator results = gameObjects.find(name);
 	if(results != gameObjects.end() )
 	{
 		delete results->second;
@@ -26,9 +27,9 @@ void GameObjectManager::Remove(std::string name)
 	}
 }
 
-GameObject* GameObjectManager::Get(std::string name) const
+GameObject* GameObjectManager::Get(string name) const
 {
-	std::map<std::string, GameObject*>::const_iterator results = gameObjects.find(name);
+	map<string, GameObject*>::const_iterator results = gameObjects.find(name);
 	if(results == gameObjects.end()) return NULL;
 	return results->second;
 }
@@ -38,25 +39,15 @@ int GameObjectManager::getObjectCount() const
 	return gameObjects.size();
 }
 
-
-void GameObjectManager::drawAll(sf::RenderWindow& w)
+void GameObjectManager::updateAll(sf::RenderWindow& w)
 {
-	std::map<std::string,GameObject*>::const_iterator itr = gameObjects.begin();
-	while(itr != gameObjects.end())
-	{
-		itr->second->Draw(w);
-		itr++;
-	}
-}
-
-void GameObjectManager::updateAll()
-{
-  std::map<std::string,GameObject*>::const_iterator itr = gameObjects.begin();
+  map<string,GameObject*>::const_iterator itr = gameObjects.begin();
   float timeDelta = clock.restart().asSeconds();
 
   while(itr != gameObjects.end())
   {
     itr->second->Update(timeDelta);
+    itr->second->Draw(w);
     itr++;
   }
   

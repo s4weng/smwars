@@ -27,20 +27,10 @@ void Game::start()
     }
 }
 
-//continually update the background...might need a better solution
-/*void Game::setBackground()
-{
-    sf::Texture defaultBG; //draw default background
-    if (!defaultBG.loadFromFile("Images/background.jpeg")) cout << "error" << endl;
-    currentBG.setTexture(defaultBG);
-    mainWindow.draw(currentBG);
-}*/
-
 //draws objects (Character characters, ...)
 void Game::drawGameObjects()
 {
-    GOM.updateAll();
-    GOM.drawAll(mainWindow);
+    GOM.updateAll(mainWindow);
     mainWindow.display();
 }
 

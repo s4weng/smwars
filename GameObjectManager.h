@@ -13,9 +13,7 @@ class GameObjectManager
 		void Remove(std::string);
 		int getObjectCount() const;
 		GameObject* Get(std::string) const;
-
-		void drawAll(sf::RenderWindow &);
-		void updateAll();
+		void updateAll(sf::RenderWindow &);
 
 	private:
 		std::map<std::string, GameObject*> gameObjects;

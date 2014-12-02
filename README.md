@@ -8,7 +8,13 @@ Players will be able to move around the map before selecting their weapon of cho
 
 Basic to-do list:
 - turn-based system
+- basic movement limit
 - basic attack functionality
   - human
   - AI
-- basic movement limit
+
+Required Graphical Tasks:
+- Sprites with transparent background
+- Background items for maps (e.g., mountains, trees, snow, etc.)
+- Weapons (sword, staff, bow and arrows)
+- Animations for attacks (shooting spells, shooting arrows, swinging sword)
