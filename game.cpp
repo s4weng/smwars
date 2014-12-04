@@ -34,12 +34,26 @@ void Game::drawGameObjects()
     mainWindow.display();
 }
 
+void Game::drawPlayer(string player)
+{
+    GOM.updatePlayer(mainWindow, player);
+    mainWindow.display();
+}
+
+void Game::drawAI()
+{
+    GOM.updateAI(mainWindow);
+    mainWindow.display();
+}
+
 void Game::gameLoop()
 {
     sf::Event currentEvent;
     mainWindow.pollEvent(currentEvent);
     mainWindow.clear(sf::Color(255, 255, 255));
-    drawGameObjects();
+    //drawGameObjects();
+    drawPlayer("player");
+    drawAI();
 
     //if user wants to close window
     if (currentEvent.type == sf::Event::Closed) mainWindow.close();

@@ -14,6 +14,8 @@ class GameObjectManager
 		int getObjectCount() const;
 		GameObject* Get(std::string) const;
 		void updateAll(sf::RenderWindow &);
+		void updatePlayer(sf::RenderWindow &, std::string);
+		void updateAI(sf::RenderWindow &);
 
 	private:
 		std::map<std::string, GameObject*> gameObjects;

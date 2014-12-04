@@ -8,7 +8,7 @@ public:
     Player();
     ~Player();
 
-    void Update(float);
+    void Update();
 };
 
 #endif

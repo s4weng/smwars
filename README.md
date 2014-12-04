@@ -12,6 +12,7 @@ Basic to-do list:
   - human
   - AI
 - multiple human player support
+- multiple AI support
 
 Required Graphical Tasks:
 - Sprites with transparent background

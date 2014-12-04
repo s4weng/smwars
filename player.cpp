@@ -6,7 +6,7 @@ Player::Player() {}
 
 Player::~Player() {}
 
-void Player::Update(float elapsedTime)
+void Player::Update()
 {
     //find the current position of the character
     sf::Vector2f pos = this->getPosition();

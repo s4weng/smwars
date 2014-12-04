@@ -32,7 +32,11 @@ void GameObject::Draw(sf::RenderWindow &w)
     }
 }
 
-void GameObject::Update(float elapsedTime)
+void GameObject::Update()
+{
+}
+
+void GameObject::Update(float)
 {
 }
 

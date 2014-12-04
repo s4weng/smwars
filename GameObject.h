@@ -9,6 +9,7 @@ public:
 
     virtual void Load(std::string);
     virtual void Draw(sf::RenderWindow &);
+    virtual void Update();
     virtual void Update(float);
 
     virtual void setPosition(float x, float y);

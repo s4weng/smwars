@@ -42,13 +42,23 @@ int GameObjectManager::getObjectCount() const
 void GameObjectManager::updateAll(sf::RenderWindow& w)
 {
   map<string,GameObject*>::const_iterator itr = gameObjects.begin();
-  float timeDelta = clock.restart().asSeconds();
 
   while(itr != gameObjects.end())
   {
-    itr->second->Update(timeDelta);
+    itr->second->Update();
     itr->second->Draw(w);
     itr++;
-  }
-  
+  } 
+}
+
+void GameObjectManager::updatePlayer(sf::RenderWindow& w, string player)
+{
+	gameObjects[player]->Update();
+	gameObjects[player]->Draw(w);
+}
+
+void GameObjectManager::updateAI(sf::RenderWindow& w)
+{
+	gameObjects["AI"]->Update();
+	gameObjects["AI"]->Draw(w);
 }

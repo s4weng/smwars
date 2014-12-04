@@ -16,8 +16,9 @@ public:
     const static int AICharPosY = 600;
 private:
 	static void gameLoop();
-    //static void setBackground();
     static void drawGameObjects();
+    static void drawPlayer(std::string);
+    static void drawAI();
 
     static sf::RenderWindow mainWindow; 
     static sf::Sprite currentBG; //current game background
