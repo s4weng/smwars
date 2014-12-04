@@ -8,7 +8,7 @@ public:
     AIChar();
     ~AIChar();
 
-    void Update(float);
+    void Update();
 
 };
 

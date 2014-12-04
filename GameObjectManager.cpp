@@ -45,7 +45,7 @@ void GameObjectManager::updateAll(sf::RenderWindow& w)
 
   while(itr != gameObjects.end())
   {
-    itr->second->Update();
+    //itr->second->Update();
     itr->second->Draw(w);
     itr++;
   } 
@@ -54,11 +54,13 @@ void GameObjectManager::updateAll(sf::RenderWindow& w)
 void GameObjectManager::updatePlayer(sf::RenderWindow& w, string player)
 {
 	gameObjects[player]->Update();
-	gameObjects[player]->Draw(w);
+	//gameObjects[player]->Draw(w);
+	updateAll(w);
 }
 
 void GameObjectManager::updateAI(sf::RenderWindow& w)
 {
 	gameObjects["AI"]->Update();
-	gameObjects["AI"]->Draw(w);
+	//gameObjects["AI"]->Draw(w);
+	updateAll(w);
 }
