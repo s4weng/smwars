@@ -10,6 +10,7 @@ public:
 
     void Draw(sf::RenderWindow &);
     float getVelocity() const;
+    bool endTurn();
 
 protected:
     int steps, hitpoints;

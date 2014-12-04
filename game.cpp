@@ -11,7 +11,7 @@ GameObjectManager Game::GOM;
 void Game::start()
 {
     mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Temp!");
-    
+
     //player and AI creation
     Player *p = new Player();
     AIChar *a = new AIChar();
@@ -24,6 +24,14 @@ void Game::start()
     while (mainWindow.isOpen())
     {
         gameLoop();
+        while (!p->endTurn())
+        {
+            drawPlayer("player");
+        }
+        while (!a->endTurn())
+        {
+            drawAI();
+        }
     }
 }
 
@@ -51,9 +59,6 @@ void Game::gameLoop()
     sf::Event currentEvent;
     mainWindow.pollEvent(currentEvent);
     mainWindow.clear(sf::Color(255, 255, 255));
-    //drawGameObjects();
-    drawPlayer("player");
-    drawAI();
 
     //if user wants to close window
     if (currentEvent.type == sf::Event::Closed) mainWindow.close();

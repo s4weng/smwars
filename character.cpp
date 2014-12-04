@@ -13,6 +13,16 @@ Character::~Character()
 {
 }
 
+bool Character::endTurn()
+{
+    if (steps == 0)
+    {
+        steps = 100;
+        return true;
+    }
+    else return false;
+}
+
 void Character::Draw(sf::RenderWindow &w)
 {
     GameObject::Draw(w);
