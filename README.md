@@ -1,13 +1,13 @@
-(To Be Named)
+Stickman Wars
 ====
 
-This repository will contain a tank-like game, written in **C++** and utilizing [SFML](http://www.sfml-dev.org/).
-It will play out similarly to other online tank games (turn based shooting, with the goal of destroying/killing the other players), but will have character/sprites instead.
+Written in **C++** and utilizing [SFML](http://www.sfml-dev.org/).
 
-Players will be able to move around the map before selecting their weapon of choice and firing at the other players. If the player hits another target, they will deal damage based on their weapon choice (and possibly other factors). When a player's health points hit 0, they will be taken out of the game until the round is over (one player remains).
+The concept of this game is based on turn based attacking, with the goal of destroying/killing the other players.
+
+Players will be able to move around the map before selecting their weapon of choice (melee/magic/range) and attacking the other players. If the player hits another target, they will deal damage based on their weapon choice (and possibly other factors). When a player's health points hit 0, they will be taken out of the game until the round is over (one player remains).
 
 Basic to-do list:
-- turn-based system
 - basic attack functionality
   - human
   - AI
