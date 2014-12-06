@@ -15,12 +15,13 @@ public:
     const static int AICharPosX = 500;
     const static int AICharPosY = 600;
 private:
-	static void gameLoop();
+	static void gameLoop(sf::Event);
     static void drawGameObjects();
     static void drawPlayer(std::string);
     static void drawAI();
 
     static sf::RenderWindow mainWindow; 
+    static sf::Event currentEvent;
     static sf::Sprite currentBG; //current game background
     static GameObjectManager GOM;
 };

@@ -19,17 +19,19 @@ void Game::start()
     a->setPosition(AICharPosX, AICharPosY);
     GOM.Add("player", p);
     GOM.Add("AI", a);
+    sf::Event currentEvent;
 
     //main game loop
     while (mainWindow.isOpen())
     {
-        gameLoop();
         while (!p->endTurn())
         {
+            gameLoop(currentEvent);
             drawPlayer("player");
         }
         while (!a->endTurn())
         {
+            gameLoop(currentEvent);
             drawAI();
         }
     }
@@ -54,14 +56,11 @@ void Game::drawAI()
     mainWindow.display();
 }
 
-void Game::gameLoop()
+void Game::gameLoop(sf::Event currentEvent)
 {
-    sf::Event currentEvent;
     mainWindow.pollEvent(currentEvent);
     mainWindow.clear(sf::Color(255, 255, 255));
 
     //if user wants to close window
     if (currentEvent.type == sf::Event::Closed) mainWindow.close();
-    mainWindow.display();
-
 }
