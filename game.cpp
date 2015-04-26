@@ -10,29 +10,31 @@ GameObjectManager Game::GOM;
 
 void Game::start()
 {
-    mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Temp!");
+    mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Stickman Wars!");
 
     //player and AI creation
-    Player *p = new Player();
-    AIChar *a = new AIChar();
-    p->setPosition(playerPosX, playerPosY);
-    a->setPosition(AICharPosX, AICharPosY);
-    GOM.Add("player", p);
-    GOM.Add("AI", a);
+    Player *p1 = new Player();
+    Player *p2 = new Player();
+    //AIChar *a = new AIChar();
+    p1->setPosition(playerPosX, playerPosY);
+    p2->setPosition(AICharPosX, AICharPosY);
+    GOM.Add("player1", p1);
+    GOM.Add("player2", p2);
+    //GOM.Add("AI", a);
     sf::Event currentEvent;
 
     //main game loop
     while (mainWindow.isOpen())
     {
-        while (!p->endTurn())
+        while (!p1->endTurn())
         {
             gameLoop(currentEvent);
-            drawPlayer("player");
+            drawPlayer("player1");
         }
-        while (!a->endTurn())
+        while (!p2->endTurn())
         {
             gameLoop(currentEvent);
-            drawAI();
+            drawPlayer("player2");
         }
     }
 }
